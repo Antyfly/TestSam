@@ -1,0 +1,62 @@
+﻿<Window x:Class="TestSam.MainWindow.Teach"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestSam.MainWindow"
+        mc:Ignorable="d"
+        Title="Teach"
+        Height="450"
+        Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <VisualBrush>
+                <VisualBrush.Visual>
+                    <MediaElement Stretch="Fill"
+                                  x:Name="MP4"
+                                  LoadedBehavior="Manual"
+                                  MediaEnded="MP4_MediaEnded"
+                                  UnloadedBehavior="Manual" />
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Background>
+        <Grid Margin="25">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="15" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button Margin="20 0"
+                    Name="Mat"
+                    Content="Студенты"
+                    Click="Mat_Click" />
+            <Button Margin="20 0"
+                    Name="Test"
+                    Content="Группы"
+                    Grid.Column="1"
+                    Click="Test_Click" />
+            <Button Margin="20 0"
+                    Name="My"
+                    Content="Профиль"
+                    Grid.Column="2"
+                    Click="My_Click" />
+            <Button Margin="20 0"
+                    Name="Journal"
+                    Content="Журнал"
+                    Grid.Column="3"
+                    Click="Journal_Click" />
+            <Frame Name="Tech"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="4"
+                   NavigationUIVisibility="Hidden" />
+        </Grid>
+    </Grid>
+</Window>

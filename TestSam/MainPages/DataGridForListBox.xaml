@@ -1,0 +1,18 @@
+﻿<Page x:Class="TestSam.MainPages.DataGridForListBox"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestSam.MainPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="100" d:DesignWidth="100"
+      Title="DataGridForListBox">
+    <Grid>
+        <DataGrid>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Тема" Binding="{Binding Topic}"/>
+                <DataGridTextColumn Header="Оценка" Binding="{Binding Estimation}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

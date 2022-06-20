@@ -1,0 +1,27 @@
+﻿<Page x:Class="TestSam.MainPages.Journal"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TestSam.MainPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="315" d:DesignWidth="760"
+      Title="Journal">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="P" AutoGenerateColumns="False" Grid.RowSpan="2" Background="#7FF0F0F0" Loaded="DataGrid_Loaded">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Оценка" Binding="{Binding Estimation}"/>
+                <DataGridTextColumn Header="Тема" Binding="{Binding EdMaterial.Topic}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Student.MiddleName}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Student.Name}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Student.LastName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="1" Width="150" Margin="5" Content="Печать" HorizontalAlignment="Right"/>
+    </Grid>
+</Page>
