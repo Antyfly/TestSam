@@ -29,14 +29,6 @@ namespace TestSam.MainPages
             LGroup.ItemsSource = con.Group.ToList();
         }
 
-        private void LBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-            //Student group = LGroup.SelectedItem as Student;
-            //var IsID = con.Student.ToList().Where(i => i.Class == group.ID).FirstOrDefault();
-            //LStudName.SelectedItem = IsID;
-        }
-
         private void LGroup_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             if (LGroup.SelectedItem is Group infoGroup)
@@ -44,11 +36,6 @@ namespace TestSam.MainPages
                 IDGroup = infoGroup.ID;
                 LStudName.ItemsSource = con.Student.Where(i => i.Class == IDGroup).ToList();
             }
-        }
-
-        public void LStudNameSourse()
-        {
-            
         }
     }
 }

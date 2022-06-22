@@ -75,6 +75,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="MainCon\ClassConnect.cs" />
+    <Compile Include="MainCon\ConnectHelper.cs" />
     <Compile Include="MainCon\EdMaterial.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

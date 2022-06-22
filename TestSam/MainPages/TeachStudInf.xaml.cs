@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestSam.MainCon;
+using static TestSam.MainCon.ClassConnect;
 using TestSam.MainWindow;
 
 namespace TestSam.MainPages
@@ -22,21 +23,18 @@ namespace TestSam.MainPages
     /// </summary>
     public partial class TeachStudInf : Page
     {
-        List<Group> groups = new List<Group>();
-        Entities ent = new Entities();
-        int UsID = Avt.UserId;
+        public int _IDStudent = 3;
         public TeachStudInf()
         {
             InitializeComponent();
-            LBox.ItemsSource = ClassConnect.con.Student.ToList();
-            
+            LBox.ItemsSource = con.Student.ToList();
+           
         }
 
         private void LBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Student student = LBox.SelectedItem as Student;
-            var IsID = ClassConnect.con.PerformanceJournal.ToList().Where(i => i.IDStudent == student.ID).FirstOrDefault();
-            L2.ItemsSource = IsID.Estimation.ToString();
+            L2.ItemsSource = con.PerformanceJournal.Where(pj => pj.IDStudent == student.ID).ToList();
         }
     }
 }
